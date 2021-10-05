@@ -49,7 +49,6 @@ th {
 
 }
 .btn-tel{
-
   margin-left: 47%;
   margin-top: -7.2%;
 }
@@ -59,6 +58,18 @@ th {
 }
 .text-bold{
   font-weight: bold;
+}
+
+.calendar{
+  padding: 1%;
+}
+
+#btn-data-nascimento{
+  display: flow-root;
+  margin-left: 65.6%;
+  margin-top: -3.3%;
+  padding: 18.7px 5px;
+
 }
 /*
 @media (min-width: 768px){

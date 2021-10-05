@@ -1,13 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { FormataDataAdapter } from './formataDataAdapter.component';
+import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { FormataData } from './formataData.component';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Telefone } from 'src/app/models/telefone';
+import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 
+// @Injectable()
+// export class FormataData extends NgbDateParserFormatter{
+
+//   parse(value: string): NgbDateStruct {
+//     throw new Error("Method not implemented.");
+//   }
+//   format(date: NgbDateStruct): string {
+//     throw new Error("Method not implemented.");
+//   }
+// }
 @Component({
 	selector: 'app-root',
 	templateUrl: './usuario-form.component.html',
-	styleUrls: ['./usuario-form.component.css']
+	styleUrls: ['./usuario-form.component.css'],
+  providers:[{provide: NgbDateParserFormatter, useClass: FormataData}, {provide: NgbDateAdapter, useClass: FormataDataAdapter}]
 })
 export class UsuarioFormComponent implements OnInit {
 
@@ -30,6 +46,7 @@ export class UsuarioFormComponent implements OnInit {
 
 	getReadUsuario(id: any) {
 		this.usuarioService.read(id).subscribe(data => {
+      console.log(data)
 			this.usuario = data;
 		});
 	}
@@ -38,6 +55,7 @@ export class UsuarioFormComponent implements OnInit {
 		if (this.usuario.id != null && this.usuario.id.toString().trim() != null) {
 			this.usuarioService.update(this.usuario)
 				.subscribe(data => {
+          console.log(data)
 				});
 		} else {
 			this.usuarioService.create(this.usuario)

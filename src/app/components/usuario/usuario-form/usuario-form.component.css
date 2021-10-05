@@ -1,0 +1,69 @@
+.form-inline, .card, .text-center {
+	justify-content: right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+th {
+    text-align: center;
+}
+
+.form-group{
+	width: 85%;
+	margin-bottom: 1rem;
+	margin-left: 10px;
+}
+
+.col-md-12, .col-md-6, .card, .text-center{
+    max-width: 92.3%;
+}
+.form-all{
+	margin-left: 5%;
+}
+.card, .text-center{
+
+	max-width: 93.3%;
+}
+
+.form-Btn {
+    width: 85%;
+    margin-bottom: 1rem;
+    margin-left: -10px;
+    margin-top: 15px;
+}
+.table-responsive-xl{
+	width: 101.5%;
+}
+.row{
+  padding: 5px;
+  margin-left: 8%;
+}
+.container{
+  margin-top: 3%;
+}
+
+@media (min-width: 576px){
+.col-sm-11 {
+    flex: 0 0 auto;
+    width: 89%;
+}
+
+}
+.btn-tel{
+
+  margin-left: 47%;
+  margin-top: -7.2%;
+}
+#col-tel-table{
+  text-align: center;
+  width: 98.5%;
+}
+.text-bold{
+  font-weight: bold;
+}
+/*
+@media (min-width: 768px){
+.col-md-12 {
+    flex: 0 0 100%;
+    max-width: 95%;
+}
+} */

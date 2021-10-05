@@ -1,0 +1,81 @@
+<form #formValidate="ngForm">
+  <div class="container ">
+    <div class="row sm-col-10">
+        <div class="col-10">
+          <label for="id" class="text-bold">CÓDIGO</label>
+          <input type="text" class="form-control" id="id" name="id" readonly="true" [(ngModel)]="usuario.id">
+        </div>
+    </div>
+    <div class="row sm-col-10">
+      <div class="col-sm-5">
+        <label for="nome" class="text-bold">Nome</label>
+          <span style="color:#CC0000; font-size: 23px;" *ngIf="!nomeValidate.valid">*</span>
+
+          <input type="text" class="form-control" id="nome" name="nome" autocomplete="false"
+            [(ngModel)]="usuario.nome" required="true" #nomeValidate="ngModel">
+      </div>
+      <div class="col-sm-5">
+        <label for="cpf" class="text-bold">CPF</label>
+          <span style="color:#CC0000; font-size: 23px;" *ngIf="!cpfValidate.valid">*</span>
+
+          <input type="text" mask="000.000.000-00" class="form-control" id="cpf" name="cpf" autocomplete="false" #cpfValidate="ngModel"
+            required="true" [(ngModel)]="usuario.cpf">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-5">
+        <label for="login" class="text-bold">E-mail / Login</label>
+        <span style="color:#CC0000; font-size: 23px;" *ngIf="!loginValidate.valid">*</span>
+
+        <input type="email" class="form-control" id="login" name="login" autocomplete="false"
+          #loginValidate="ngModel" [(ngModel)]="usuario.login" required="true">
+      </div>
+      <div class="col-sm-5">
+          <label for="senha" class="text-bold">Senha</label>
+          <span style="color:#CC0000; font-size: 23px;" *ngIf="!passwordValidate.valid">*</span>
+
+          <input type="password" class="form-control" id="senha" name="senha" autocomplete="false"
+            #passwordValidate="ngModel" [(ngModel)]="usuario.senha" required="true">
+      </div>
+        <div class="sm-col-10">
+          <div class="col-sm-11">
+            <div class="card">
+              <div class="card-header" align="center">
+                <b >
+                  TELEFONES
+                </b>
+              </div>
+              <div class="card-body col-sm-6" >
+                <input type="text" mask="(00) 0 0000-0000"  [(ngModel)]="telefone.numero" id="numero" name="numero" class="form-control" placeholder="(00) 0 0000-0000">
+
+              </div>
+              <div class="card-body col-sm-6 btn-tel" >
+                <button class="btn btn-primary" (click)="getSavePhone()">Adicionar</button>
+              </div>
+              <div class="table-responsive-xl" >
+                <table class="table table-striped table-sm" id="col-tel-table">
+                  <tbody>
+                    <tr *ngFor="let telefone of usuario.telefones; let i = index">
+                      <td>{{telefone.id}}</td>
+                      <td>{{telefone.numero | mask: '(00) 0 000-0000'}}</td>
+                      <td>
+                        <button class="btn btn-danger" (click)="getDeletePhone(telefone.id, i)">Delete</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row form-Btn">
+        <div class="form-group col-md-12">
+          <button type="button" class="btn btn-primary" [routerLink]="['/usuario/lista']"
+            routerLinkActive="router-link-active">Retornar</button>&nbsp;
+          <button type="button" class="btn btn-primary" (click)="getNewUsuario()">Novo</button>&nbsp;
+          <button type="button" class="btn btn-success" [disabled]="!formValidate.valid"
+            (click)="getSaveUsuario()">Gravar</button>
+        </div>
+      </div>
+    </div>
+  </div>

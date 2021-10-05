@@ -1,0 +1,41 @@
+<form class="row g-3" #formValidate="ngForm">
+  <div class="form-group">
+		<h3 align="center">PLATAFORMA RWS</h3>
+	</div>
+  <div class="col-12">
+    <label for="login" class="form-label">Login:</label>
+    <input type="email" class="form-control" #email="ngModel" [(ngModel)]="usuario.login" id="login" name="login"
+    placeholder="informe o email" required="true" placeholder="e-mail ou telefone ">
+  </div>
+  <div class="col-12">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control" #senha="ngModel" [(ngModel)]="usuario.senha" id="senha" name="senha"
+    placeholder="informe a senha" required>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" [disabled]="!formValidate.valid" (click)="login()" id="btn-login">Acessar</button>
+  </div>
+</form>
+
+<!-- <form #formValidate="ngForm">
+	<div class="form-group">
+		<h3 align="center">PLATAFORMA RWS</h3>
+	</div>
+	<div class="form-group">
+		<label for="login">Login:</label>
+		<input type="email" class="form-control" #email="ngModel" [(ngModel)]="usuario.login" id="login" name="login"
+			placeholder="informe o email" required="true">
+		<div *ngIf="email.invalid" class="alert alert-danger">
+			Login deve ser informado
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="password">Password:</label>
+		<input type="password" class="form-control" #senha="ngModel" [(ngModel)]="usuario.senha" id="senha" name="senha"
+			placeholder="informe a senha" required>
+		<div *ngIf="senha.invalid" class="alert alert-danger">
+			Senha deve ser informada
+		</div>
+	</div>
+	<button type="submit" [disabled]="!formValidate.valid" class="btn btn-primary" (click)="login()" id="btn-login" >Acessar</button>
+</form> -->

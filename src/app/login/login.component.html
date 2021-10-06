@@ -13,8 +13,10 @@
     placeholder="informe a senha" required>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" [disabled]="!formValidate.valid" (click)="login()" id="btn-login">Acessar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!formValidate.valid" (click)="login()" >Acessar</button>&nbsp;
+    <button type="submit" class="btn btn-primary" [disabled]="!email.valid" (click)="reset()" >Recuperar Acesso</button>
   </div>
+
 </form>
 
 <!-- <form #formValidate="ngForm">

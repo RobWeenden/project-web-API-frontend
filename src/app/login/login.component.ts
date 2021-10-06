@@ -29,5 +29,8 @@ export class LoginComponent implements OnInit {
 		}
 
 	}
+  public reset(){
+    this.loginService.reset(this.usuario.login);
+  }
 
 }

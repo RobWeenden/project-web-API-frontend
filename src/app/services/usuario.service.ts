@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AppConstants } from '../app-constants';
 
 const baseUrl = `${AppConstants.baseUrl}`;
+const basePath = `${AppConstants.baseUrlPath}`
 
 @Injectable({
 	providedIn: 'root'
@@ -63,6 +64,10 @@ export class UsuarioService {
 			return false;
 		}
 	}
+
+  getProfessionList(): Observable<any>{
+    return this.http.get<any>(`${basePath}/profissao/v1/listAll`);
+  }
 
 
 

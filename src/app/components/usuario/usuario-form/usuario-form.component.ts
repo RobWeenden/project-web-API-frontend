@@ -8,17 +8,8 @@ import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Telefone } from 'src/app/models/telefone';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { Profissao } from 'src/app/models/profissao';
 
-// @Injectable()
-// export class FormataData extends NgbDateParserFormatter{
-
-//   parse(value: string): NgbDateStruct {
-//     throw new Error("Method not implemented.");
-//   }
-//   format(date: NgbDateStruct): string {
-//     throw new Error("Method not implemented.");
-//   }
-// }
 @Component({
 	selector: 'app-root',
 	templateUrl: './usuario-form.component.html',
@@ -28,9 +19,11 @@ import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 export class UsuarioFormComponent implements OnInit {
 
 	idUsuario = null;
-	usuario = new Usuario();
 	loading = null;
+	usuario = new Usuario();
 	telefone = new Telefone();
+  profissoes: Array<Profissao[]>;
+
 	constructor(
 		private routeActive: ActivatedRoute,
 		private usuarioService: UsuarioService,
@@ -39,10 +32,19 @@ export class UsuarioFormComponent implements OnInit {
 
 	ngOnInit() {
 		this.idUsuario = this.routeActive.snapshot.paramMap.get('id');
+    this.getReadProfissao();
 		if (this.idUsuario != null) {
 			this.getReadUsuario(this.idUsuario);
 		}
 	}
+
+  getReadProfissao(){
+    this.usuarioService.getProfessionList()
+    .subscribe(data =>{
+      console.log(data)
+      this.profissoes = data;
+    });
+  }
 
 	getReadUsuario(id: any) {
 		this.usuarioService.read(id).subscribe(data => {

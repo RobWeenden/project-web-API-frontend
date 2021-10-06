@@ -8,6 +8,7 @@ export class Usuario {
 	cpf: string;
 	senha: string;
 	dataNascimento: string;
+  salario: DoubleRange;
 	telefones: Array<Telefone>;
   profissao: Profissao = new Profissao();
 

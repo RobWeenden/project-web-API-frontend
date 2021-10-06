@@ -19,7 +19,7 @@
 			<th>ACOES</th>
 		</thead>
 		<tbody>
-			<tr *ngFor="let usuario of usuarios | paginate:{ itemsPerPage:2, currentPage: p,  totalItems: total }; let i = index">
+			<tr *ngFor="let usuario of usuarios | paginate:{ itemsPerPage:5, currentPage: p,  totalItems: total }; let i = index">
 				<td>{{usuario.id}}</td>
 				<td>{{usuario.nome}}</td>
 				<td>{{usuario.cpf | mask: '000.000.000-00'}}</td>

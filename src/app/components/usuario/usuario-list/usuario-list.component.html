@@ -5,10 +5,15 @@
     </div>
     <div class="col-auto">
       <button type="button" class="btn btn-primary mb-3 "(click)="getSearchUsuario()">Buscar</button>&nbsp;
-      <button type="button" class="btn btn-success mb-3 " [routerLink]="['/usuario/novo']" routerLinkActive="router-link-active" >Novo</button>
+      <button type="button" class="btn btn-success mb-3 " [routerLink]="['/usuario/novo']" routerLinkActive="router-link-active" >Novo</button>&nbsp;
+      <button (click)="getPrintReport()" type="button" class="btn btn-success mb-3 " (click)="modal.toggle()">Relatorio</button>
+
     </div>
+
   </form>
+
 </div>
+
 <div class="table-responsive">
 	<table class="table table-striped table-light">
 		<thead>
@@ -32,11 +37,10 @@
 		</tbody>
 	</table>
 </div>
-<div class="text-center">
-	<pagination-controls
-		(pageChange)="getLoadingPage(p = $event);"
-		previousLabel="Anterior"
-		nextLabel="Proximo"
-		resposive="true"
-	></pagination-controls>
-</div>
+
+<app-modal #modal>
+  <h3>Relatorio de Usuarios</h3>
+
+  <iframe id="pdf" width="100%" height="500px" frameborder="0" allowtransparency="true"></iframe>
+  <button (click)="modal.toggle();" type="button" class="btn btn-primary" >Fechar</button>
+</app-modal>

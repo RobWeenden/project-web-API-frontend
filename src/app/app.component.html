@@ -1,4 +1,4 @@
-<div id="page-content-wrapper" >
+<!-- <div id="page-content-wrapper" >
   <nav class="navbar navbar-expand-lg navbar-light bg-light" [hidden]="closeNavBar()">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -8,15 +8,15 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link" role="button" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active">Usuarios</a>
-          <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Menu
-          </a> -->
-          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active">Usuarios</a>
             <a class="dropdown-item" href="#">Link 2</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Link 3</a>
-          </div> -->
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="sair()">Sair</a>
@@ -25,4 +25,36 @@
     </div>
   </nav>
   <router-outlet></router-outlet>
-  </div>
+  </div> -->
+
+  <div id="page-content-wrapper" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" [hidden]="closeNavBar()">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="sair()">Sair</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" role="button" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active">Usuarios</a>
+            <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+              Menu
+            </a> -->
+            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" [routerLink]="['usuario/lista']" routerLinkActive="router-link-active" >Usuario</a>
+               <a class="dropdown-item" [routerLink]="['/userReport']" routerLinkActive="router-link-active" >Relatório</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+    </div>
+

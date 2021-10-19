@@ -10,7 +10,7 @@ th {
 .form-group{
 	width: 85%;
 	margin-bottom: 1rem;
-	margin-left: 10px;
+	margin-left: 19px;
 }
 
 .col-md-12, .col-md-6, .card, .text-center{
@@ -50,7 +50,7 @@ th {
 }
 .btn-tel{
   margin-left: 47%;
-  margin-top: -7.2%;
+  margin-top: -9.4%;
 }
 #col-tel-table{
   text-align: center;
@@ -66,8 +66,8 @@ th {
 
 #btn-data-nascimento{
   display: flow-root;
-  margin-left: 65.6%;
-  margin-top: -3.3%;
+  margin-left: 73.6%;
+  margin-top: -3.8%;
   padding: 18.7px 5px;
 
 }

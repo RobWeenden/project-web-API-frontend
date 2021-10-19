@@ -9,7 +9,11 @@ import { Usuario } from 'src/app/models/usuario';
 	styleUrls: ['./usuario-list.component.css']
 })
 export class UsuarioListComponent implements OnInit {
+  mostrar: boolean = false;
 
+  toggle () {
+    this.mostrar = !this.mostrar;
+  }
 	usuarios: Array<Usuario[]>;
 	nome: string;
 	total: number;
@@ -75,6 +79,9 @@ export class UsuarioListComponent implements OnInit {
 		}
 	}
 
+  getPrintReport(){
+    return this.usuarioService.getDownloadPdfReport();
+  }
 
 	// getSearchUsuarioNew() {
 	// 	if (this.nome === '') {
@@ -108,6 +115,19 @@ export class UsuarioListComponent implements OnInit {
 	// 	this.getListPageUsuarios(pagina);
 	// }
 
+ public testeModal = false;
+  showModal(): void {
+    this.testeModal = true;
+  }
 
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.testeModal = false;
+  }
 
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.testeModal = false;
+  }
 }
+

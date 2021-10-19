@@ -68,6 +68,12 @@ export class UsuarioService {
   getProfessionList(): Observable<any>{
     return this.http.get<any>(`${basePath}/profissao/v1/listAll`);
   }
+  getDownloadPdfReport(){
+    return this.http.get(`${baseUrl}/relatorio`, {responseType: 'text'})
+    .subscribe(data => {
+      document.querySelector('iframe').src = data;
+    });
+  }
 
 
 

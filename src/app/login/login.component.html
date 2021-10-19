@@ -1,4 +1,4 @@
-<form class="row g-3" #formValidate="ngForm">
+<!-- <form class="row g-3" #formValidate="ngForm">
   <div class="form-group">
 		<h3 align="center">PLATAFORMA RWS</h3>
 	</div>
@@ -17,9 +17,9 @@
     <button type="submit" class="btn btn-primary" [disabled]="!email.valid" (click)="reset()" >Recuperar Acesso</button>
   </div>
 
-</form>
+</form> -->
 
-<!-- <form #formValidate="ngForm">
+<form #formValidate="ngForm">
 	<div class="form-group">
 		<h3 align="center">PLATAFORMA RWS</h3>
 	</div>
@@ -27,17 +27,18 @@
 		<label for="login">Login:</label>
 		<input type="email" class="form-control" #email="ngModel" [(ngModel)]="usuario.login" id="login" name="login"
 			placeholder="informe o email" required="true">
-		<div *ngIf="email.invalid" class="alert alert-danger">
+		<!-- <div *ngIf="email.invalid" class="alert alert-danger">
 			Login deve ser informado
-		</div>
+		</div> -->
 	</div>
 	<div class="form-group">
 		<label for="password">Password:</label>
 		<input type="password" class="form-control" #senha="ngModel" [(ngModel)]="usuario.senha" id="senha" name="senha"
 			placeholder="informe a senha" required>
-		<div *ngIf="senha.invalid" class="alert alert-danger">
+		<!-- <div *ngIf="senha.invalid" class="alert alert-danger">
 			Senha deve ser informada
-		</div>
+		</div> -->
 	</div>
-	<button type="submit" [disabled]="!formValidate.valid" class="btn btn-primary" (click)="login()" id="btn-login" >Acessar</button>
-</form> -->
+	<button type="submit" [disabled]="!formValidate.valid" class="btn btn-primary" (click)="login()" >Acessar</button>&nbsp;
+  <button type="submit" class="btn btn-primary" [disabled]="!email.valid" (click)="reset()" >Recuperar Acesso</button>
+</form>

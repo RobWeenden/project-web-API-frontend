@@ -1,3 +1,4 @@
+import { UsuarioReportComponent } from './components/usuario/usuario-report/usuario-report.component';
 import { ModalModule } from './modal.module'
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -29,6 +30,8 @@ export const appRouters: Routes = [
 	{ path: 'usuario/lista', component: UsuarioListComponent, canActivate: [GuardRotasGuard] },
 	{ path: 'usuario/novo', component: UsuarioFormComponent, canActivate: [GuardRotasGuard] },
 	{ path: 'usuario/editar/:id', component: UsuarioFormComponent, canActivate: [GuardRotasGuard] },
+
+  { path: 'usuario/relatorio', component: UsuarioReportComponent, canActivate: [GuardRotasGuard] },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
@@ -41,6 +44,7 @@ export const optionsMask: Partial<IConfig> | (() => Partial<IConfig>) = {};
 		LoginComponent,
 		UsuarioListComponent,
 		UsuarioFormComponent,
+    UsuarioReportComponent,
   ],
   imports: [
     BrowserModule,

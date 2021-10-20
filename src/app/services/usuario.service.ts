@@ -1,3 +1,4 @@
+import { UsuarioReport } from './../models/usuario-report';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -75,6 +76,12 @@ export class UsuarioService {
     });
   }
 
+  postDownloadPdfReportParam(usuarioReport: UsuarioReport){
+    return this.http.post(`${baseUrl}/relatorio/`, usuarioReport, {responseType: 'text'})
+    .subscribe(data => {
+      document.querySelector('iframe').src = data;
+    });
+  }
 
 
 

@@ -1,13 +1,17 @@
-<h3>Relatorio de Usuario</h3>
 <form #formValidate="ngForm">
+<div class="row">
+  <div class="form-group col">
+    <p class="title text-info">Informe no campo abaixo a data de inicio e fim para impressão do Relatorio:</p>
 
+  </div>
+</div>
   <div class="row">
     <div class="form-group col-md-3">
       <label for="dataInicio" class="text-bold">Data de Nascimento Início</label>
         <span style="color:#CC0000; font-size: 23px;" >*</span>
       <div class="input-group">
         <input type="text" class="form-control" id="dataInicio" name="dataInicio" autocomplete="false"
-        ngbDatepicker #dataInicio="ngbDatepicker" placeholder="dd/mm/yyyy" [(ngModel)]="usuarioReport.dataInicio"
+        ngbDatepicker #dataInicio="ngbDatepicker" placeholder="dia/mês/ano" [(ngModel)]="usuarioReport.dataInicio"
         required="true"/>
         <div class="input-group-append" >
           <button class="btn btn-primary"  (click)="dataInicio.toggle()" type="button" > </button>
@@ -19,7 +23,7 @@
         <span style="color:#CC0000; font-size: 23px;" >*</span>
       <div class="input-group">
         <input type="text" class="form-control" id="dataFim" name="dataFim" autocomplete="false"
-        ngbDatepicker #dataFim="ngbDatepicker" placeholder="dd/mm/yyyy" [(ngModel)]="usuarioReport.dataFim"
+        ngbDatepicker #dataFim="ngbDatepicker" placeholder="dia/mês/ano" [(ngModel)]="usuarioReport.dataFim"
         required="true"/>
         <div class="input-group-append" >
           <button class="btn btn-primary"  (click)="dataFim.toggle()" type="button" > </button>

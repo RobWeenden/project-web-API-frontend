@@ -71,6 +71,12 @@ th {
   padding: 18.7px 5px;
 
 }
+.title{
+  font-weight: 400;
+  font-size: 15pt;
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
 /*
 @media (min-width: 768px){
 .col-md-12 {

@@ -1,15 +1,18 @@
 <div>
   <form class="row g-3 form-inline">
+    <div class="row">
     <div class="col-auto ">
       <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" placeholder="Digite o nome do usuario">
     </div>
-    <div class="col-auto">
-      <button type="button" class="btn btn-primary mb-3 "(click)="getSearchUsuario()">Buscar</button>&nbsp;
+
+      <div class="form-group">
+
+        <button type="button" class="btn btn-primary mb-3 "(click)="getSearchUsuario()">Buscar</button>&nbsp;
       <button type="button" class="btn btn-success mb-3 " [routerLink]="['/usuario/novo']" routerLinkActive="router-link-active" >Novo</button>&nbsp;
       <button (click)="getPrintReport()" type="button" class="btn btn-success mb-3 " (click)="modal.toggle()">Relatorio</button>
 
     </div>
-
+    </div>
   </form>
 
 </div>
@@ -37,7 +40,14 @@
 		</tbody>
 	</table>
 </div>
-
+<div class="text-center">
+	<pagination-controls
+		(pageChange)="getLoadingPage(p = $event);"
+		previousLabel="Anterior"
+		nextLabel="Próximo"
+		resposive="true"
+	></pagination-controls>
+</div>
 <app-modal #modal>
   <h3>Relatorio de Usuarios</h3>
 

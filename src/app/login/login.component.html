@@ -24,7 +24,7 @@
 		<h3 align="center">PLATAFORMA RWS</h3>
 	</div>
 	<div class="form-group">
-		<label for="login">Login:</label>
+		<label for="login"><b>Login:</b></label>
 		<input type="email" class="form-control" #email="ngModel" [(ngModel)]="usuario.login" id="login" name="login"
 			placeholder="informe o email" required="true">
 		<!-- <div *ngIf="email.invalid" class="alert alert-danger">
@@ -32,7 +32,7 @@
 		</div> -->
 	</div>
 	<div class="form-group">
-		<label for="password">Password:</label>
+		<label for="password"><b>Password:</b></label>
 		<input type="password" class="form-control" #senha="ngModel" [(ngModel)]="usuario.senha" id="senha" name="senha"
 			placeholder="informe a senha" required>
 		<!-- <div *ngIf="senha.invalid" class="alert alert-danger">

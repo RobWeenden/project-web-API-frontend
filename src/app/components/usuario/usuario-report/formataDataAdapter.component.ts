@@ -18,8 +18,14 @@ export class FormataDataAdapter extends NgbDateAdapter<string>{
   }
   toModel(date: NgbDateStruct | null): string | null{
 
-    return date ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : null;
+    return date ? validarFormatoData(date.day) + this.DELIMITER + validarFormatoData(date.month) + this.DELIMITER + date.year : null;
 
   }
 
+}
+function validarFormatoData(item) {
+  if(item.toString !== '' && parseInt(item) <= 9){
+    return '0' + item;
+  }
+  return item
 }

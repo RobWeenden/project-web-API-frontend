@@ -26,7 +26,7 @@ export class FormataData extends NgbDateParserFormatter{
 
   toModel(date: NgbDateStruct | null): string | null{
 
-    return date ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : null;
+    return date ? validarFormatoData(date.day) + this.DELIMITER + validarFormatoData(date.month) + this.DELIMITER + date.year : null;
 
   }
 

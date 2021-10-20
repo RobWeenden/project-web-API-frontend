@@ -19,6 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartsModule } from 'ng2-charts';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 
 export const appRouters: Routes = [
@@ -32,6 +34,8 @@ export const appRouters: Routes = [
 	{ path: 'usuario/editar/:id', component: UsuarioFormComponent, canActivate: [GuardRotasGuard] },
 
   { path: 'usuario/relatorio', component: UsuarioReportComponent, canActivate: [GuardRotasGuard] },
+  { path: 'usuario/grafico', component: BarChartComponent, canActivate: [GuardRotasGuard] },
+
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
@@ -45,6 +49,7 @@ export const optionsMask: Partial<IConfig> | (() => Partial<IConfig>) = {};
 		UsuarioListComponent,
 		UsuarioFormComponent,
     UsuarioReportComponent,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,7 @@ export const optionsMask: Partial<IConfig> | (() => Partial<IConfig>) = {};
     NgxCurrencyModule,
     ModalModule,
     BrowserAnimationsModule,
-
+    ChartsModule
 
   ],
   providers: [],

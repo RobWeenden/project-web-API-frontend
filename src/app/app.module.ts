@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
-import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { GraficoForm } from './components/grafico-form/grafico-form.component';
 
 
 export const appRouters: Routes = [
@@ -34,7 +34,7 @@ export const appRouters: Routes = [
 	{ path: 'usuario/editar/:id', component: UsuarioFormComponent, canActivate: [GuardRotasGuard] },
 
   { path: 'usuario/relatorio', component: UsuarioReportComponent, canActivate: [GuardRotasGuard] },
-  { path: 'usuario/grafico', component: BarChartComponent, canActivate: [GuardRotasGuard] },
+  { path: 'usuario/grafico', component: GraficoForm, canActivate: [GuardRotasGuard] },
 
 ];
 
@@ -49,7 +49,7 @@ export const optionsMask: Partial<IConfig> | (() => Partial<IConfig>) = {};
 		UsuarioListComponent,
 		UsuarioFormComponent,
     UsuarioReportComponent,
-    BarChartComponent,
+    GraficoForm,
   ],
   imports: [
     BrowserModule,

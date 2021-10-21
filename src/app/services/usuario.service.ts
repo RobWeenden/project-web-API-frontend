@@ -83,6 +83,10 @@ export class UsuarioService {
     });
   }
 
+  readGraphic(): Observable<any>{
+    return this.http.get(`${baseUrl}/grafico`);
+  }
+
 
 
 }

@@ -13,6 +13,7 @@ import * as Chart from 'chart.js';
 export class GraficoForm implements OnInit{
 
   grafico = new UsuarioGrafico();
+  arraySalario = [];
   constructor(
     private usuarioService: UsuarioService,
   ){}
@@ -42,15 +43,16 @@ export class GraficoForm implements OnInit{
     .subscribe(data =>{
       this.grafico = data;
       this.barChartLabels = this.grafico.nome.replace(/"/g, '').split(',');
-      this.configChart();
+      this.arraySalario = JSON.parse('['+this.grafico.salario+']');
+      this.configGrafico(this.arraySalario);
 
     });
   }
 
-  configChart(){
-    var arraySalario = JSON.parse('['+this.grafico.salario+']');
+  configGrafico(item: any){
+
     this.barChartData = [{
-      data: arraySalario,
+      data: item,
       label: 'Salário Usuario',
       backgroundColor: '#17A2BF',
       borderColor:'#0887a0',

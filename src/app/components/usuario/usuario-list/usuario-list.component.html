@@ -8,8 +8,8 @@
       <div class="form-group">
 
         <button type="button" class="btn btn-primary mb-3 "(click)="getSearchUsuario()">Buscar</button>&nbsp;
-      <button type="button" class="btn btn-success mb-3 " [routerLink]="['/usuario/novo']" routerLinkActive="router-link-active" >Novo</button>&nbsp;
-      <button (click)="getPrintReport()" type="button" class="btn btn-success mb-3 " (click)="modal.toggle()">Relatorio</button>
+      <button type="button" class="btn btn-outline-success mb-3 " [routerLink]="['/usuario/novo']" routerLinkActive="router-link-active" >Novo</button>&nbsp;
+      <button (click)="getPrintReport()" type="button" class="btn btn-outline-primary mb-3 " (click)="modal.toggle()">Relatorio</button>
 
     </div>
     </div>
@@ -33,8 +33,8 @@
 				<td>{{usuario.cpf | mask: '000.000.000-00'}}</td>
 				<td>{{usuario.login}}</td>
 				<td>
-					<button class="btn btn-warning" [routerLink]="['/usuario/editar', usuario.id]" routerLinkActive="router-link-active">Editar</button>&nbsp;
-					<button class="btn btn-danger" (click)="getDeleteUsuario(usuario.id, i)">Delete</button>
+					<button class="btn btn-outline-success" [routerLink]="['/usuario/editar', usuario.id]" routerLinkActive="router-link-active">Editar</button>&nbsp;
+					<button class="btn btn-outline-danger" (click)="getDeleteUsuario(usuario.id, i)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

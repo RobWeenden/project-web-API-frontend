@@ -1,0 +1,76 @@
+.example-icon {
+  padding: 0 14px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar{
+  background: #004a9f;
+  color: white;
+}
+mat-sidenav{
+  width: 200px;
+  border-right: none;
+  background: #002b5c;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+.content{
+  height: calc(100vh - 98px) ;
+  margin: 16px;
+  margin-left: 32ppx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: lightgray;
+  border-radius: 10px;
+}
+mat-sidenav-container{
+  height: calc(100vh - 65px);
+}
+.sidebar_lateral{
+  height: calc(100% - 64px);
+}
+.menu-button:hover{
+  color: white;
+  text-decoration: none;
+}
+.menu-button_lateral{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+}
+.menu-button_lateral{
+  color: white;
+  text-decoration: none;
+
+}
+
+mat-icon {
+  margin-right: 8px;
+}
+
+.name{
+  margin: 0;
+  margin-top:  8px;
+  font-weight: normal;
+  font-size: 12pt;
+}
+.designation{
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgray;
+}
+mat-divider{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+

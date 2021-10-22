@@ -1,3 +1,6 @@
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { UsuarioReportComponent } from './components/usuario/usuario-report/usuario-report.component';
 import { ModalModule } from './modal.module'
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +23,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
-import { GraficoForm } from './components/grafico-form/grafico-form.component';
+import { GraficoForm } from './components/usuario-grafico/grafico-form.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 
 export const appRouters: Routes = [
@@ -64,7 +71,13 @@ export const optionsMask: Partial<IConfig> | (() => Partial<IConfig>) = {};
     NgxCurrencyModule,
     ModalModule,
     BrowserAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    MatToolbarModule
 
   ],
   providers: [],

@@ -1,69 +1,73 @@
-<!-- <div id="page-content-wrapper" >
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" [hidden]="closeNavBar()">
+<div class="sidebar_lateral">
+  <mat-toolbar [hidden]="closeNavBar()">
+    <div fxShow="true" fxHide.lt-md="true">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" role="button" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active">Usuarios</a>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Menu
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active">Usuarios</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Link 3</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="sair()">Sair</a>
-        </li>
-      </ul>
+      <a mat-button class="menu-button" [routerLink]="['/home']" routerLinkActive="router-link-active" >
+        <mat-icon>home</mat-icon>
+        <span class="name">Home</span>
+      </a>
+
+      <a mat-button class="menu-button" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active" >
+        <mat-icon>person</mat-icon>
+        <span class="name">Usuarios</span>
+      </a>
+      <a mat-button class="menu-button" [routerLink]="['/usuario/relatorio']" routerLinkActive="router-link-active" >
+        <mat-icon>assignment</mat-icon>
+        <span class="name">Relatório</span>
+      </a>
+      <a mat-button class="menu-button" [routerLink]="['/usuario/grafico']" routerLinkActive="router-link-active" >
+        <mat-icon>assessment</mat-icon>
+        <span class="name">Gráfico</span>
+      </a>
+      <a mat-button class="menu-button" (click)="sair()" >
+        <mat-icon>info</mat-icon>
+        <span class="name">Sair</span>
+      </a>
     </div>
-  </nav>
-  <router-outlet></router-outlet>
-  </div> -->
 
-  <div id="page-content-wrapper" >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" [hidden]="closeNavBar()">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <a mat-button class="menu-button_lateral" (click)="sidenav.toggle()">
+        <mat-icon >menu</mat-icon>
+        <span class="name">Menu</span>
+      </a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" role="button" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active">Usuários</a>
-            </li>
-            <li>
-              <a class="nav-link" role="button" [routerLink]="['/usuario/relatorio']" routerLinkActive="router-link-active">Relatório</a>
+    </div>
+  </mat-toolbar>
 
-            </li>
-            <li>
-              <a class="nav-link" role="button" [routerLink]="['/usuario/grafico']" routerLinkActive="router-link-active">Gráfico</a>
 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="sair()">Sair</a>
-            </li>
-            <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<mat-sidenav-container fxFlexFill >
+  <mat-sidenav #sidenav fxLayout="column" [hidden]="closeNavBar()" >
 
-              Menu
-            </a> -->
-            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item" [routerLink]="['usuario/lista']" routerLinkActive="router-link-active" >Usuario</a>
-               <a class="dropdown-item" [routerLink]="['/userReport']" routerLinkActive="router-link-active" >Relatório</a>
-              <a class="dropdown-item" href="#">Link 2</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Link 3</a>
-            </div> -->
+    <h2 class="name">SISTEMA RWS</h2>
 
-        </ul>
-      </div>
-    </nav>
+    <mat-divider></mat-divider>
+
+    <a mat-button class="menu-button_lateral" [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">
+      <mat-icon>home</mat-icon>
+      <span class="name">Home</span>
+    </a>
+    <a mat-button class="menu-button_lateral" [routerLink]="['/usuario/lista']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">
+      <mat-icon>person</mat-icon>
+      <span class="name">Usuarios</span>
+    </a>
+    <a mat-button class="menu-button_lateral" [routerLink]="['/usuario/relatorio']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">
+      <mat-icon>assignment</mat-icon>
+      <span class="name">Relatório</span>
+    </a>
+    <a mat-button class="menu-button_lateral" [routerLink]="['/usuario/grafico']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">
+      <mat-icon>assessment</mat-icon>
+      <span class="name">Gráfico</span>
+    </a>
+
+    <mat-divider></mat-divider>
+
+     <a mat-button class="menu-button_lateral" (click)="sair()" (click)="sidenav.toggle()">
+      <mat-icon>info</mat-icon>
+      <span class="name">Sair</span>
+    </a>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
     <router-outlet></router-outlet>
-    </div>
-
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>

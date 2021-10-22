@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
+import {BreakpointObserver} from '@angular/cdk/layout'
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent implements OnInit{
   title = 'curso-angular-rest';
 
   constructor(
-		private router: Router
+		private router: Router,
 	) { }
 
 	ngOnInit(): void {
@@ -35,4 +36,6 @@ export class AppComponent implements OnInit{
 		}
 
 	}
+
+
 }

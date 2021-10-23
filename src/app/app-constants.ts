@@ -1,4 +1,4 @@
-import { environment } from './../environments/environment.prod';
+import { environment } from './../environments/environment';
 export class AppConstants {
 
   public static get baseServer(): string { return environment.API}
